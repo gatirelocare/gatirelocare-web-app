@@ -1,6 +1,26 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Why Choose Us",
+  description:
+    "Choose GatiRelocare Packers Movers for 10+ years of experience, 1000+ completed projects, 100% customer satisfaction, and 24/7 support. Premium relocation services you can trust.",
+  keywords: [
+    "best packers and movers",
+    "experienced movers",
+    "reliable relocation services",
+    "customer satisfaction",
+    "professional packers",
+  ],
+  openGraph: {
+    title: "Why Choose GatiRelocare Packers Movers",
+    description:
+      "10+ years of experience, 1000+ completed projects, 100% customer satisfaction, and 24/7 support.",
+    url: "https://gatirelocare.com/why-us", // Update with your actual domain
+  },
+};
 
 export default function WhyUsPage() {
   return (

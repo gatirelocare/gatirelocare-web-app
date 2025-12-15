@@ -3,6 +3,19 @@ import Image from "next/image";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home - Premium Relocation Services",
+  description:
+    "Premium packers and movers service offering luxury relocation solutions. Expert handling for homes, offices, and automobiles with 24/7 support. Get your free quote today!",
+  openGraph: {
+    title: "GatiRelocare Packers Movers - Premium Relocation Services",
+    description:
+      "Premium packers and movers service offering luxury relocation solutions. Expert handling for homes, offices, and automobiles with 24/7 support.",
+    url: "https://gatirelocare.com", // Update with your actual domain
+  },
+};
 
 export default function Home() {
   return (

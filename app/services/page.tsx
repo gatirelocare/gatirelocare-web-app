@@ -1,6 +1,28 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Premium Services",
+  description:
+    "Comprehensive relocation services including domestic moving, corporate shifting, transportation solutions, storage & warehouse, automobile shifting, and packaging solutions.",
+  keywords: [
+    "domestic moving services",
+    "corporate relocation",
+    "car transportation",
+    "storage and warehouse",
+    "packaging services",
+    "office shifting",
+    "home relocation",
+  ],
+  openGraph: {
+    title: "Our Premium Services | GatiRelocare Packers Movers",
+    description:
+      "Comprehensive relocation services including domestic moving, corporate shifting, transportation solutions, and more.",
+    url: "https://gatirelocare.com/services", // Update with your actual domain
+  },
+};
 
 export default function ServicesPage() {
   return (

@@ -1,6 +1,26 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us - Get Your Free Quote",
+  description:
+    "Contact GatiRelocare Packers Movers for a free quote. Available 24/7 for all your relocation needs. Call (+91) 7014571878 or fill out our contact form.",
+  keywords: [
+    "contact packers and movers",
+    "free quote relocation",
+    "packers movers contact number",
+    "moving quote",
+    "relocation inquiry",
+  ],
+  openGraph: {
+    title: "Contact Us - Get Your Free Quote | GatiRelocare",
+    description:
+      "Contact GatiRelocare Packers Movers for a free quote. Available 24/7 for all your relocation needs.",
+    url: "https://gatirelocare.com/contact", // Update with your actual domain
+  },
+};
 
 export default function ContactPage() {
   return (
