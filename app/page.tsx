@@ -10,56 +10,59 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-16 bg-gradient-to-br from-blue-50 via-blue-100/30 to-red-50 relative overflow-hidden">
+      <section className="pt-20 md:pt-16 bg-gradient-to-br from-blue-50 via-blue-100/30 to-red-50 relative overflow-hidden">
         {/* Light backdrop overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-100/20 via-white/40 to-red-100/20"></div>
-        {/* Background decorative images */}
-        <div className="absolute top-10 right-10 w-64 h-64 opacity-10">
+        {/* Background decorative images - hidden on mobile */}
+        <div className="absolute top-10 right-10 w-64 h-64 opacity-10 hidden md:block">
           <Image
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop"
             alt="Moving truck"
             fill
+            sizes="256px"
             className="object-cover rounded-full"
           />
         </div>
-        <div className="absolute bottom-10 left-10 w-48 h-48 opacity-10">
-        <Image
+        <div className="absolute bottom-10 left-10 w-48 h-48 opacity-10 hidden md:block">
+          <Image
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=300&h=300&fit=crop"
             alt="Moving boxes"
             fill
+            sizes="192px"
             className="object-cover rounded-full"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 lg:py-32 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                   Premium Relocation
                 </span>
                 <span className="block bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
                   Services
                 </span>
-          </h1>
-              <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto lg:mx-0">
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 md:mb-8 max-w-3xl mx-auto lg:mx-0">
                 Experience luxury moving services with expert handling,
                 white-glove service, and uncompromising care for your belongings
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Link
                   href="/contact"
-                  className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-full font-semibold hover:from-red-700 hover:to-red-800 transition-all text-lg shadow-lg"
+                  className="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:from-red-700 hover:to-red-800 transition-all text-base sm:text-lg shadow-lg"
                 >
                   Get Free Quote
                 </Link>
                 <Link
                   href="/services"
-                  className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all text-lg"
+                  className="border-2 border-blue-600 text-blue-600 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all text-base sm:text-lg"
                 >
                   Our Services
                 </Link>
               </div>
             </div>
+            {/* Contact Form - Desktop */}
             <div className="hidden lg:block">
               <div className="bg-white rounded-3xl p-6 shadow-2xl border border-blue-200">
                 <h2 className="text-xl font-bold mb-4">
@@ -69,6 +72,18 @@ export default function Home() {
                 </h2>
                 <ContactForm variant="compact" />
               </div>
+            </div>
+          </div>
+
+          {/* Contact Form - Mobile */}
+          <div className="lg:hidden mt-8">
+            <div className="bg-white rounded-2xl p-6 shadow-xl border border-blue-200">
+              <h2 className="text-xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">
+                  Get Your Free Quote
+                </span>
+              </h2>
+              <ContactForm variant="compact" />
             </div>
           </div>
         </div>
@@ -192,6 +207,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop"
                   alt="Domestic Moving"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -226,6 +242,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop"
                   alt="Corporate Shifting"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -260,6 +277,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
                   alt="Transportation Solution"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -293,6 +311,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop"
                   alt="Storage & Warehouse"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -326,6 +345,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=400&fit=crop"
                   alt="Automobile Shifting"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -360,6 +380,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop"
                   alt="Packaging Solution"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -490,10 +511,11 @@ export default function Home() {
             </div>
             <div className="relative">
               <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl">
-            <Image
+                <Image
                   src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop"
                   alt="Professional moving team"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-800/50 to-transparent"></div>
@@ -501,19 +523,27 @@ export default function Home() {
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
                       <div className="text-4xl font-bold mb-2">10+</div>
-                      <div className="text-sm text-blue-100">Years of Experience</div>
+                      <div className="text-sm text-blue-100">
+                        Years of Experience
+                      </div>
                     </div>
                     <div className="text-center">
                       <div className="text-4xl font-bold mb-2">1000+</div>
-                      <div className="text-sm text-blue-100">Projects Completed</div>
+                      <div className="text-sm text-blue-100">
+                        Projects Completed
+                      </div>
                     </div>
                     <div className="text-center">
                       <div className="text-4xl font-bold mb-2">100%</div>
-                      <div className="text-sm text-blue-100">Customer Satisfaction</div>
+                      <div className="text-sm text-blue-100">
+                        Customer Satisfaction
+                      </div>
                     </div>
                     <div className="text-center">
                       <div className="text-4xl font-bold mb-2">24/7</div>
-                      <div className="text-sm text-blue-100">Support Available</div>
+                      <div className="text-sm text-blue-100">
+                        Support Available
+                      </div>
                     </div>
                   </div>
                 </div>
